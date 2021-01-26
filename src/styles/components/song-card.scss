@@ -1,0 +1,101 @@
+.song-card {
+  width: 190px; // (1200 - 12*5)/6
+  margin-right: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 0;
+
+  @include m-mobile {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid $darkLight;
+  }
+
+  &:nth-child(6n) {
+    margin-right: 0;
+  }
+}
+
+.song-card__inner {
+  @include m-mobile {
+    display: flex;
+    align-items: center;
+    padding: 6px $ruler/1.4;
+  }
+}
+
+.song-card__artwork {
+  width: 100%;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 10px;
+  background-color: $darker;
+
+  @include m-mobile {
+    background-size: cover;
+    width: 50px;
+    height: 46px;
+    margin: 0 10px 0 0;
+    flex-shrink: 0;
+  }
+}
+
+.song-card__body {
+  overflow: hidden;
+  align-items: center;
+}
+
+.song-card__avatar {
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-right: 10px;
+
+  @include m-mobile {
+    display: none;
+  }
+}
+
+.song-card__details {
+  overflow: hidden;
+  flex: 1;
+}
+
+.song-card__title,
+.song-card__username {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $yellow;
+  font-size: 13px;
+  margin-bottom: 2px;
+  text-transform: capitalize;
+  
+  @include m-mobile {
+    font-size: 12px;
+  }
+}
+
+.song-card__username {
+  color: $gray;
+  font-size: 12px;
+}
+
+.song-card__mobile-event {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include m-mobile {
+    z-index: 1;
+  }
+}

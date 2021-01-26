@@ -1,0 +1,65 @@
+$ruler: 16px;
+
+$dark: #333;
+$darker: #222;
+$darkLight: lighten($dark, 5);
+$darkLighter: lighten($dark, 25);
+
+$gray: #ddd;
+
+$white: #fff;
+$yellow: #ffdd59;
+
+$height-nav: 60px;
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: $dark;
+}
+
+input,
+textarea,
+button {
+  font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+
+  @include m-mobile {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+}
+
+.row--hoz-center {
+  justify-content: center;
+}
+
+.row--ver-center {
+  align-items: center;
+}

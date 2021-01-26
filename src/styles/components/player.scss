@@ -1,0 +1,96 @@
+.player {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: $darker;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.player__inner {
+  display: flex;
+  padding: 6px 0;
+}
+
+.player__section {
+  display: flex;
+  align-items: center;
+  color: $darkLighter;
+
+  & + & {
+    margin-left: 18px;
+  }
+
+  @include m-mobile {
+    width: 100%;
+  }
+}
+
+.player__section--slider {
+  flex: 1;
+}
+
+.player__section--volume {
+  width: 100px;
+}
+
+.player__section--song {
+  width: 320px;
+
+  @include m-mobile {
+    width: 70%;
+  }
+}
+
+.player__section--time {
+  font-size: 12px;
+}
+
+.player__section--slider,
+.player__section--volume,
+.player__section__toggle-volume,
+.player__section--time {
+  @include m-mobile {
+    display: none;
+  }
+}
+
+.player__buttons {
+  display: flex;
+
+  @include m-mobile {
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 25px;
+  }
+}
+
+.player__button {
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  @include m-mobile {
+    width: auto;
+    cursor: default;
+
+    & + & {
+      margin-left: 20px;
+    }
+  }
+}
+
+.player__button--active {
+  color: $yellow;
+}
+
+.player__song {
+  @include m-mobile {
+    margin-left: 10px;
+  }
+}

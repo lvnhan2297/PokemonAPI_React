@@ -1,0 +1,43 @@
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .slider__handle {
+      opacity: 1;
+    }
+  }
+}
+
+.slider__bar {
+  width: 100%;
+  height: 2px;
+  background-color: $darkLight;
+}
+
+.slider__bar__fill {
+  position: relative;
+  height: 100%;
+  background-color: $yellow;
+}
+
+.slider__handle {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $yellow;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0;
+
+  @include m-mobile {
+    opacity: 1;
+  }
+}

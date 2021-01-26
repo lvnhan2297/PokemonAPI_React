@@ -1,0 +1,42 @@
+.song-details {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.song-details__artwork {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: $darker;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.song-details__artwork--circle {
+  border-radius: 50%;
+}
+
+.song-details__details {
+  overflow: hidden;
+}
+
+.song-details__title,
+.song-details__username {
+  display: block;
+  color: $yellow;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.song-details__username {
+  color: $gray;
+}
