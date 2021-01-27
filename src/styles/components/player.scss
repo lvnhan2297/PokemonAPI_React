@@ -35,7 +35,7 @@
   width: 100px;
 }
 
-.player__section--song {
+.player__section--poke {
   width: 320px;
 
   @include m-mobile {
@@ -89,7 +89,7 @@
   color: $yellow;
 }
 
-.player__song {
+.player__poke {
   @include m-mobile {
     margin-left: 10px;
   }

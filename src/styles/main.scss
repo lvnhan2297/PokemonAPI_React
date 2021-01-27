@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 @import 'mixins';
 @import 'globals';
 
 @import 'components/nav';
 @import 'components/nav-search';
 @import 'components/loader';
-@import 'components/songs';
-@import 'components/song-card';
+@import 'components/pokes';
+@import 'components/poke-card';
 @import './components/artwork-play';
 @import './components/player';
 @import './components/slider';
-@import './components/song-details';
+@import './components/poke-details';
 @import './components/history';
+@import './components/not-found-page.scss';
+@import './components/poke-details-page.scss';

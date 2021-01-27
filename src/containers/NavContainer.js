@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import LogoPoke from '../assets/images/LogoPoke.png';
 
 const NavContainer = () => {
   return (
     <>
       <nav className="nav">
         <div className="nav__inner container">
-          <div className="nav__section"><a className="nav__logo__text" href="/">Pokemon</a></div>
+          <div className="nav__section">
+            <Link className="nav__logo__text" to="/"><img src={LogoPoke} alt="" className='logo'/></Link>
+          </div>
           <div className="nav__section">
             <div className="nav-search">
               <i className="nav-search__icon fas fa-search" />

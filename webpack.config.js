@@ -5,19 +5,22 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "index-bundle.js"
+    path: path.resolve(__dirname, '..', 'build'),
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    publicPath: '/'
   },
   devServer: {
     inline:true,
-    port: 4000
+    port: 4000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ["babel-loader","source-map-loader"],
       },
       {
         test: /\.scss$/,
@@ -34,6 +37,16 @@ module.exports = {
           },
           { loader: 'sass-loader' }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|wav|mp3|ico)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]',
+            outputPath: 'img'
+          }
+        }
       }
     ]
   },

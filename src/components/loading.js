@@ -5,7 +5,7 @@ const propTypes = {
   loading: PropTypes.bool.isRequired
 };
 
-const Loader = ({ loading }) => {
+const loading = ({ loading }) => {
   if (!loading) {
     return null;
   }
@@ -22,6 +22,6 @@ const Loader = ({ loading }) => {
   );
 };
 
-Loader.propTypes = propTypes;
+loading.propTypes = propTypes;
 
-export default Loader;
+export default loading;

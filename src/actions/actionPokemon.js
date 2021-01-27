@@ -1,25 +1,25 @@
-import {FETCH_DATA_POKE, FETCH_DATA_POKE_SUCCESS} from '../constants/ActionTypes'
+import {FETCH_DATA_POKE_DETAIL, FETCH_DATA_POKE_DETAIL_SUCCESS} from '../constants/ActionTypes'
 import  {fetchData}  from '../utils/apiCaller';
 
 
-export const fetchDataPoke = () => {
+export const fetchDataDetailPoke = (namePoke) => {
   return {
-    type: FETCH_DATA_POKE
+    type: FETCH_DATA_POKE_DETAIL,
+    payload: { namePoke }
   }
 }
-export const fetchDataPokeSuccess = (fetchedData, nextUrl) => {
+export const fetchDataPokeDetailSuccess = (namePoke,fetchedData) => {
   return {
-    type: FETCH_DATA_POKE_SUCCESS,
-    payload: {fetchedData, nextUrl}
+    type: FETCH_DATA_POKE_DETAIL_SUCCESS,
+    payload: {namePoke,fetchedData}
   }
 }
 
-export const fetchApiPoke = (API_URL) => async (dispatch) => {
+export const fetchApiDetailPoke = (API_URL,namePoke) => async (dispatch) => {
   try {
-    await dispatch(fetchDataPoke())
+    await dispatch(fetchDataDetailPoke(namePoke))
     const data = await fetchData(API_URL)
-    const { next, results } = data;
-    await dispatch(fetchDataPokeSuccess(results, next))
+    await dispatch(fetchDataPokeDetailSuccess(namePoke,data))
   } catch (err) {
     console.log('fetchData error', err);
   }

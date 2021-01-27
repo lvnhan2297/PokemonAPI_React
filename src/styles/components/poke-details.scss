@@ -1,0 +1,42 @@
+.poke-details {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.poke-details__artwork {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: $darker;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.poke-details__artwork--circle {
+  border-radius: 50%;
+}
+
+.poke-details__details {
+  overflow: hidden;
+}
+
+.poke-details__title,
+.poke-details__username {
+  display: block;
+  color: $yellow;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.poke-details__username {
+  color: $gray;
+}
