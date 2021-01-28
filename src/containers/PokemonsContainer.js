@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchApiPoke} from '../actions/actionPokemons'
 import Loading from '../components/loading'
@@ -7,30 +7,32 @@ import {API_FETCH_POKEMONS, API_FETCH_POKEMON_DETAIL_IMG} from '../constants/url
 import { Link } from 'react-router-dom';
 
 const propTypes = {
-  loading: PropTypes.bool.isRequired,
-  fetchApiPoke: PropTypes.func.isRequired,
-  listPokemons: PropTypes.array.isRequired,
+  collectionPokes: PropTypes.object.isRequired,
+  fetchApiPoke: PropTypes.func.isRequired
 };
 
-const PokemonsContainer = ({fetchApiPoke, listPokemons, loading, nexPage}) => {
+const PokemonsContainer = ({fetchApiPoke, collectionPokes}) => {
 
   const getIdByUrl = (url) => url.split('/')[url.split('/').length-2];
   const imgPokemon = (getIdByUrl) => `${API_FETCH_POKEMON_DETAIL_IMG}/versions/generation-v/black-white/animated/${getIdByUrl}.gif`
   const bgImgPokemon = (getIdByUrl) => `${API_FETCH_POKEMON_DETAIL_IMG}/other/dream-world/${getIdByUrl}.svg`
   
+  const getDataBy = 'all'
+  const api= `${API_FETCH_POKEMONS}?limit=24`;
+  
   useEffect(() => {
-    const api= `${API_FETCH_POKEMONS}?limit=24`;
-    fetchApiPoke(api)
-  }, [fetchApiPoke])
-
+    !Object.keys(collectionPokes).includes(getDataBy) &&
+    fetchApiPoke(api,getDataBy)
+  }, [])
+  
   useEffect(() => {
     const handleScroll = () => {
       if (
-        nexPage &&  window.innerHeight + window.scrollY ==
-        document.body.offsetHeight + 60
+        collectionPokes[getDataBy] &&  window.innerHeight + window.scrollY ==
+        document.body.offsetHeight + 100
       ) {
         setTimeout(
-          () => fetchApiPoke(nexPage)
+          () => fetchApiPoke(collectionPokes[getDataBy].nextUrl,getDataBy)
         );
       }
     };
@@ -38,12 +40,12 @@ const PokemonsContainer = ({fetchApiPoke, listPokemons, loading, nexPage}) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [fetchApiPoke,nexPage]);
+  }, [fetchApiPoke,collectionPokes,getDataBy]);
 
   return (
     <>
       <div className="row">
-        {listPokemons.map((item,index)=>
+        {collectionPokes[getDataBy] && collectionPokes[getDataBy].pokemons.map((item,index)=>
         <div className="poke-card" key={index}>
           <div className="poke-card__inner">
             <div className="poke-card__artwork" style={{backgroundImage: `url(${bgImgPokemon(getIdByUrl(item.url))})`}}>
@@ -60,15 +62,13 @@ const PokemonsContainer = ({fetchApiPoke, listPokemons, loading, nexPage}) => {
         </div>
         )}
       </div>
-      <Loading loading={loading}/>
+      { collectionPokes[getDataBy] && <Loading loading={collectionPokes[getDataBy].loading}/>}
     </>
   )
 }
 const mapStateToProps = state => {
   return { 
-    listPokemons: state.collectionPoke.pokemons,
-    loading: state.collectionPoke.loading,
-    nexPage: state.collectionPoke.nextUrl,
+    collectionPokes: state.collectionPokes,
   }
 }
 

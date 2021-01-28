@@ -57,3 +57,39 @@
     margin-top: 10px;
   }
 }
+
+.nav__menu{
+  display: flex;
+  list-style: none;
+  position: relative;
+  &__item{
+    padding: 1.2rem 0;
+    a{
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #ffff;
+      padding: 1.2rem;
+      &:hover{
+        color: #FDF50E;
+      }
+    }
+    &__dropdown{
+      position: absolute;
+      color: #ffff;
+      top: 100%;
+      left: 0;
+      background-color: #222;
+      padding: 5px 0;
+      .nav__dropdown__item{
+        padding: 5px 0;
+        list-style: none;
+        &:hover{
+          background: linear-gradient(to bottom right,#024,#402);
+        }
+        a{
+          padding: 5px 30px;
+        }
+      }
+    }
+  }
+}

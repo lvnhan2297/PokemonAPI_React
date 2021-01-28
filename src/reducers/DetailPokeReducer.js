@@ -19,7 +19,7 @@ function pokeDetail(state = initialState, action ) {
       return {
         ...state,
         loading: false,
-        pokemons: {...action.payload.fetchedData}
+        pokemons: {...state.pokemons,...action.payload.fetchedData}
       };
     default:
       return state;

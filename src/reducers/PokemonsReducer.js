@@ -27,4 +27,17 @@ function collectionPoke(state = initialState, action ) {
       return state;
   }
 }
-export default collectionPoke;
+
+function collectionPokes(state = {}, action) {
+  switch (action.type) {
+    case FETCH_DATA_POKE:
+    case FETCH_DATA_POKE_SUCCESS:
+      return {
+        ...state,
+        [action.payload.getDataBy]: collectionPoke(state[action.payload.getDataBy],action)
+      };
+    default:
+      return state;
+  }
+}
+export default collectionPokes;

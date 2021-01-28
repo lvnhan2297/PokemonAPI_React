@@ -177,6 +177,27 @@
       text-align: center;
       color: #fff;
       margin-top: 1rem;
+      img{
+        margin-left: 20px;
+      }
+    }
+    .content-info-detail-poke{
+      padding: 2rem;
+      color: #fff;
+      .info-detail-poke-item{
+        .cate-info{
+          text-transform: capitalize;
+          padding: .5rem 0;
+          display: flex;
+          align-items: center;
+          .value-cate-info{
+            margin-left: 1rem;
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
     }
   }
 }

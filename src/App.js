@@ -3,7 +3,9 @@ import NavContainer from './containers/NavContainer';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import Loading from './components/loading';
 import {routes} from './routes';
+
 const App = () => {
+
   const renderRoutes = useCallback(routes => {
     let result = null;
     if (routes.length > 0) {

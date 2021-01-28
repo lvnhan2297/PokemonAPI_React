@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import collectionPoke from './PokemonsReducer'
+import collectionPokes from './PokemonsReducer'
 import collectionPokeDetail from './DetailPokeReducer'
+import router from './RouterReducer'
 export default combineReducers({
-  collectionPoke,
-  collectionPokeDetail
+  collectionPokes,
+  collectionPokeDetail,
+  router
 })

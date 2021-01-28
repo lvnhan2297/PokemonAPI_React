@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {fetchApiDetailPoke} from '../actions/actionPokemon'
 import {API_FETCH_POKEMONS, API_FETCH_POKEMON_DETAIL_IMG} from '../constants/urlApi'
 import Loading from '../components/loading'
+import DetailPoke from '../components/detailPoke'
 
 const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
 
@@ -14,17 +15,7 @@ const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
   useEffect(() => {
     const api= `${API_FETCH_POKEMONS}/${idPokemon}`;
     fetchApiDetailPoke(api,namePokemon)
-  }, [fetchApiDetailPoke])
-
-  // Call Info Detail
-    
-  detailPokemons[namePokemon] && useEffect(() => {
-      const api= detailPokemons[namePokemon].species.url;
-      fetchApiDetailPoke(api,namePokemon)
-    }, [fetchApiDetailPoke])
-
-    console.log(detailPokemons[namePokemon] && 
-      detailPokemons[namePokemon].pokemons)
+  }, [fetchApiDetailPoke,namePokemon])
 
   return (
     <>{
@@ -47,7 +38,6 @@ const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
                         <div className="hp" style={{width:`${item.base_stat}px`}}></div>
                       </div>
                     )}
-                    
                   </div>
                 </div>
                 <div className="stats columns">
@@ -92,16 +82,10 @@ const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
             </div>
           </div>
         </div>
-        <div className="columns detail-poke-init">
-          <div className="pokemon column">
-            <div className="card has-text-weight-bold has-text-white card--blastoise">
-              <div className="title">Info {detailPokemons[namePokemon].pokemons.name}</div>
-            </div>
-          </div>
-        </div>
+        <DetailPoke {...detailPokemons[namePokemon]}/>
       </div>
         }
-      {/* <Loading detailPokemons[namePokemon] && loading={ detailPokemons[namePokemon].loading}/> */}
+      {detailPokemons[namePokemon] && <Loading loading={ detailPokemons[namePokemon].loading}/>}
     </>
   )
 }
