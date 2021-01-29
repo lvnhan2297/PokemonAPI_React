@@ -21,7 +21,13 @@ function detailPoke({pokemons,fetchApiDetailPoke,detailPokemons}) {
           <div className="pokemon column">
             <div className="card has-text-weight-bold has-text-white card--blastoise">
               <div className="title">Info {pokemons.name}
-              <img src={`${API_FETCH_POKEMON_DETAIL_IMG}/versions/generation-v/black-white/animated/${pokemons.id}.gif`} />
+              {detailPokemons[pokemons.name].pokemons.sprites&&
+              detailPokemons[pokemons.name].pokemons.sprites.versions&&
+              detailPokemons[pokemons.name].pokemons.sprites.versions['generation-v']&&
+              <img src={
+                detailPokemons[pokemons.name].pokemons.sprites.versions['generation-v']['black-white'].animated.front_default||
+                detailPokemons[pokemons.name].pokemons.sprites.front_default
+              }/>}
               </div>
               <div className="content-info-detail-poke">
                 <div className="info-detail-poke-item">
@@ -47,7 +53,7 @@ function detailPoke({pokemons,fetchApiDetailPoke,detailPokemons}) {
                     }
                   </div>
                   <div className="cate-info">habitat: 
-                    {detailPokemons[pokemons.name].pokemons.habitat && 
+                    {detailPokemons[pokemons.name].pokemons.habitat ? 
                     <span className="value-cate-info"> 
                       <Link to={detailPokemons[pokemons.name].pokemons.habitat.url}
                       >{detailPokemons[pokemons.name].pokemons.habitat.name.replace('-',' ')}</Link>
@@ -59,8 +65,10 @@ function detailPoke({pokemons,fetchApiDetailPoke,detailPokemons}) {
                       detailPokemons[pokemons.name].pokemons.habitat.name==='sea'&&'🌊'||
                       detailPokemons[pokemons.name].pokemons.habitat.name==='urban'&&'🏰'||
                       detailPokemons[pokemons.name].pokemons.habitat.name==='waters-edge'&&'🏖️'||
-                      detailPokemons[pokemons.name].pokemons.habitat.name==='mountain'&&'⛰️'||'❔'}
-                    </span>}
+                      detailPokemons[pokemons.name].pokemons.habitat.name==='mountain'&&'⛰️'}
+                    </span>:
+                    <span className="value-cate-info">❔</span>
+                    }
                   </div>
                   <div className="cate-info">hatching eggs time: 
                       <span className="value-cate-info"> 

@@ -64,14 +64,18 @@
   position: relative;
   &__item{
     padding: 1.2rem 0;
-    a{
-      text-decoration: none;
+    &__title{
       text-transform: capitalize;
       color: #ffff;
       padding: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
       &:hover{
         color: #FDF50E;
       }
+    }
+    &:hover .nav__menu__item__dropdown{
+      display: block;
     }
     &__dropdown{
       position: absolute;
@@ -80,14 +84,21 @@
       left: 0;
       background-color: #222;
       padding: 5px 0;
+      display: none;
       .nav__dropdown__item{
         padding: 5px 0;
         list-style: none;
-        &:hover{
-          background: linear-gradient(to bottom right,#024,#402);
-        }
         a{
           padding: 5px 30px;
+          text-transform: capitalize;
+          color: #ffff;
+          text-decoration: none;
+          display: block;
+          font-weight: bold;
+          border: 4px double #222; 
+          &:hover{
+            border: 4px double #ffff
+          }
         }
       }
     }

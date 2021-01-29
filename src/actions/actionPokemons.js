@@ -25,3 +25,13 @@ export const fetchApiPoke = (API_URL,getDataBy) => async (dispatch) => {
     console.log('fetchData error', err);
   }
 }
+export const fetchApiByColor = (API_URL,getDataBy) => async (dispatch) => {
+  try {
+    await dispatch(fetchDataPoke(getDataBy))
+    const data = await fetchData(API_URL)
+    const {pokemon_species} = data
+    await dispatch(fetchDataPokeSuccess(pokemon_species, null, getDataBy))
+  } catch (err) {
+    console.log('fetchData error', err);
+  }
+}

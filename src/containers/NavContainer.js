@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LogoPoke from '../assets/images/LogoPoke.png';
+import ListColor from '../components/listColor'
 
 const NavContainer = () => {
   return (
@@ -13,15 +14,17 @@ const NavContainer = () => {
           <div className="nav__section">
             <ul className="nav__menu">
               <li className="nav__menu__item">
-                <a href="">color</a>
+                <span className="nav__menu__item__title">color</span>
                 <ul className="nav__menu__item__dropdown">
-                  <li className="nav__dropdown__item"><a href="">Link 1</a></li>
-                  <li className="nav__dropdown__item"><a href="">Link 2</a></li>
-                  <li className="nav__dropdown__item"><a href="">Link 3</a></li>
+                  <ListColor/>
                 </ul>
               </li>
-              <li className="nav__menu__item"><a href="">egg groups</a></li>
-              <li className="nav__menu__item"><a href="">habitat</a></li>
+              <li className="nav__menu__item">
+                <span className="nav__menu__item__title">egg groups</span>
+              </li>
+              <li className="nav__menu__item" >
+                <span className="nav__menu__item__title">habitat</span>
+              </li>
             </ul>
           </div>
           <div className="nav__section">

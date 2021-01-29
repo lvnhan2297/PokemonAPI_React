@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import {fetchApiDetailPoke} from '../actions/actionPokemon'
-import {API_FETCH_POKEMONS, API_FETCH_POKEMON_DETAIL_IMG} from '../constants/urlApi'
+import {API_FETCH_POKEMONS} from '../constants/urlApi'
 import Loading from '../components/loading'
 import DetailPoke from '../components/detailPoke'
 
@@ -25,7 +25,14 @@ const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
           <div className="pokemon column">
             <div className="card has-text-weight-bold has-text-white card--blastoise">
               <div className="card-image">
-                <div className="card-image-container"><img src={`${API_FETCH_POKEMON_DETAIL_IMG}/other/dream-world/${idPokemon}.svg`} /></div>
+                <div className="card-image-container">
+                  {detailPokemons[namePokemon].pokemons.sprites&&
+                  detailPokemons[namePokemon].pokemons.sprites.other&&
+                  <img src={
+                  detailPokemons[namePokemon].pokemons.sprites.other.dream_world.front_default||
+                  detailPokemons[namePokemon].pokemons.sprites.other['official-artwork'].front_default
+                  }/>}
+                </div>
               </div>
               <div className="card-content has-text-centered">
                 <div className="main">
