@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'js/[name].js',
     chunkFilename: '[name].chunk.js',
-    publicPath: '/'
+    // publicPath: '/'
   },
   devServer: {
     inline:true,

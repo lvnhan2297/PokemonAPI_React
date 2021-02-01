@@ -47,10 +47,10 @@ a {
     width: 1170px;
   }
   @include m-laptop {
-    width: 962px;
+    width: 800px;
   }
   @include m-tablet {
-    width: 738px;
+    width: 650px;
   }
   @include m-phablet {
     width: 450px;
@@ -76,4 +76,8 @@ a {
 
 .row--ver-center {
   align-items: center;
+}
+* {
+  min-width: 0;
+  min-height: 0;
 }
