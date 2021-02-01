@@ -44,16 +44,16 @@ a {
   margin: 0 auto;
   width: auto;
   @include m-desktop {
-    width: 1170px;
+    max-width: 1170px;
   }
   @include m-laptop {
-    width: 800px;
+    max-width: 962px;
   }
   @include m-tablet {
-    width: 650px;
+    max-width: 738px;
   }
   @include m-phablet {
-    width: 450px;
+    max-width: 450px;
   }
 
   @include m-mobile {
