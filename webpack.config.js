@@ -5,8 +5,8 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, '..', 'build'),
-    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js',
     chunkFilename: '[name].chunk.js',
     publicPath: '/'
   },
