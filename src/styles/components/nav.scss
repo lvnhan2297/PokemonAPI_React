@@ -1,5 +1,5 @@
 .nav {
-  height: $height-nav;
+  height: auto;
   background-color: $darker;
   color: $dark;
   width: 100%;
@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   z-index: 1;
-
+  padding: 10px;
   @include m-mobile {
     height: $height-nav * 1.6;
   }
@@ -18,10 +18,12 @@
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   height: 100%;
-
+  @include m-laptop {
+    justify-content: center;
+  }
   @include m-mobile {
     padding: 0 $ruler/1.4;
     flex-direction: column;
@@ -85,6 +87,7 @@
       background-color: #222;
       padding: 5px 0;
       display: none;
+      z-index: 50;
       .nav__dropdown__item{
         padding: 5px 0;
         list-style: none;

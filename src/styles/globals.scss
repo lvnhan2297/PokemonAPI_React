@@ -23,6 +23,7 @@ $height-nav: 60px;
 body {
   font-family: 'Electrolize', sans-serif;
   background-color: $dark;
+  overflow-x: hidden;
 }
 
 input,
@@ -40,8 +41,19 @@ a {
 }
 
 .container {
-  width: 1200px;
   margin: 0 auto;
+  @include m-desktop {
+    width: 1170px;
+  }
+  @include m-laptop {
+    width: 962px;
+  }
+  @include m-tablet {
+    width: 738px;
+  }
+  @include m-phablet {
+    width: 450px;
+  }
 
   @include m-mobile {
     width: 100%;
@@ -54,6 +66,7 @@ a {
   display: flex;
   flex-direction: row !important;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .row--hoz-center {

@@ -11,11 +11,9 @@
     border: 0;
     border-bottom: 1px solid $darkLight;
   }
-
-  &:nth-child(6n) {
-    margin-right: 0;
-  }
 }
+
+
 
 .poke-card__inner {
   @include m-mobile {

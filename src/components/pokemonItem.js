@@ -15,11 +15,10 @@ const pokemonItem= ({name,url}) => {
       <div className="poke-card">
         <div className="poke-card__inner">
           <div className="poke-card__artwork" 
-          style={{backgroundImage: `url(${
-            // bgImgPokemonSp(getIdByUrl(url)),bgImgPokemon(getIdByUrl(url))|| 
-            bgImgPokemonSp(getIdByUrl(url))
-          })`}}>
-            <div className="artwork-play" role="button"><i className="artwork-play__icon fas fa-play" /></div>
+          style={{backgroundImage: `url(${bgImgPokemonSp(getIdByUrl(url))})`}}
+            onMouseOver={e => e.target.style.backgroundImage= `url(${bgImgPokemon(getIdByUrl(url))})`}
+            onMouseOut={e => e.target.style.backgroundImage= `url(${bgImgPokemonSp(getIdByUrl(url))})`}
+          >
           </div>
           <div className="poke-card__body row">
             <div className="poke-card__avatar" style={{backgroundImage: `url(${

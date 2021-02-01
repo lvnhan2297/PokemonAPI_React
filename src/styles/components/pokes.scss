@@ -1,9 +1,11 @@
 .pokes {
   margin-top: $height-nav + 40;
   padding: 12px 0;
-
+  @include m-tablet {
+    margin-top: $height-nav + 90;
+  }
   @include m-mobile {
-    margin-top: $height-nav * 1.6;
+    padding-top: $height-nav * 1.6;
     padding: 0;
   }
 }

@@ -34,7 +34,7 @@ function detailPoke({pokemons,fetchApiDetailPoke,detailPokemons}) {
                   <div className="cate-info">color: 
                     {detailPokemons[pokemons.name].pokemons.color && 
                     <span className="value-cate-info"> 
-                      <Link to={detailPokemons[pokemons.name].pokemons.color.url}
+                      <Link to={`/pokemon-color/${detailPokemons[pokemons.name].pokemons.color.url.split('/')[detailPokemons[pokemons.name].pokemons.color.url.split('/').length-2]}`}
                       style={{color:`${detailPokemons[pokemons.name].pokemons.color.name}`}}
                       >{detailPokemons[pokemons.name].pokemons.color.name}</Link>
                     </span>}

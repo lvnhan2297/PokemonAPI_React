@@ -34,7 +34,10 @@
 .pokemon .card--blastoise {
   border-color: #72d0fb;
   background: linear-gradient(to bottom right,#024,#402);
-
+  padding: 0 20px;
+  @include m-phablet {
+    width: 100%;
+  }
   .card-image-container {
     position: absolute;
     margin-left: auto;
@@ -138,7 +141,12 @@
   background: linear-gradient(to right, #92df00, #4ea13f);
 }
 .group-info-poke{
-  padding: 0 20px;
+  @include m-phablet{
+    padding: 0 80px;
+  }
+  @include m-mobile{
+    padding: 0;
+  }
   .item-info-poke{
     padding: 5px 0;
     display: flex;
@@ -164,13 +172,26 @@
 .container-detail-poke{
   display:  flex;
   justify-content: center;
+  @include m-tablet {
+    padding: 0 50px;
+  }
+  @include m-phablet {
+    display: block;
+    padding: 0 20px;
+  }
 }
 .columns.detail-poke-init{
-  width: 500px;
+  width: auto;
   .card.has-text-weight-bold.has-text-white.card--blastoise{
     width: 100%;
     height: 100%;
     margin-left: 50px;
+    @include m-phablet {
+      margin-left: 0;
+      .title{
+        font-size: 30px !important;
+      }
+    }
     .title{
       text-transform: uppercase;
       font-size: 40px;
@@ -185,6 +206,9 @@
     .content-info-detail-poke{
       padding: 2rem;
       color: #fff;
+      @include m-mobile{
+        padding: 10px 0;
+      }
       .info-detail-poke-item{
         .cate-info{
           text-transform: capitalize;

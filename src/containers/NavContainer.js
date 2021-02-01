@@ -6,7 +6,7 @@ import ListColor from '../components/listColor'
 const NavContainer = () => {
   return (
     <>
-      <nav className="nav">
+      <nav className="nav" id="nav">
         <div className="nav__inner container">
           <div className="nav__section">
             <Link className="nav__logo__text" to="/"><img src={LogoPoke} alt="" className='logo'/></Link>
