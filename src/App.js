@@ -26,7 +26,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavContainer/>
-      <div>
+      <>
         <div className="container">
           <div id="pokes" className="pokes">
             <Suspense fallback={<Loading loading={true}/>}>
@@ -34,7 +34,7 @@ const App = () => {
             </Suspense>
           </div>
         </div>
-      </div>
+      </>
     </BrowserRouter>
   )
 }

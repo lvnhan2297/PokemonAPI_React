@@ -20,11 +20,13 @@
 .nav-search__icon {
   display: inline-block;
   width: 50px;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   background-color: $darker;
-  margin: 1px;
+  margin: 5px;
   cursor: pointer;
+  border: none;
+  outline: none
 }
 
 .nav-search__clear {

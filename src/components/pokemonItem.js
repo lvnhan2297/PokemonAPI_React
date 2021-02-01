@@ -25,7 +25,7 @@ const pokemonItem= ({name,url}) => {
               imgPokemon(getIdByUrl(url))||imgPokemonSp(getIdByUrl(url))
               })`}} />
             <div className="poke-card__details">
-              <Link className="poke-card__title" to={{pathname: '/pokemon/'+getIdByUrl(url)+'/'+ name}} title="Ed Sheeran - Lego House">{name}</Link>
+              <Link className="poke-card__title" to={{pathname: '/pokemon/'+getIdByUrl(url)+'/'+ name}} title={name}>{name}</Link>
               <a className="poke-card__username" href="#" title="Warner Music Brasil">Warner Music Brasil</a></div>
           </div>
         </div>

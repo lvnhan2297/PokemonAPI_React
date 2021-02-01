@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LogoPoke from '../assets/images/LogoPoke.png';
-import ListColor from '../components/listColor'
+import ListColor from '../components/listColor';
+import { FcSearch } from "react-icons/fc";
 
 const NavContainer = () => {
   return (
@@ -29,9 +30,14 @@ const NavContainer = () => {
           </div>
           <div className="nav__section">
             <div className="nav-search">
-              <i className="nav-search__icon fas fa-search" />
+              <button className="nav-search__icon"><FcSearch 
+                style={{fontSize: '25px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    margin: '0 auto'
+                  }}
+                /></button>
               <input className="nav-search__input" type="text" placeholder="Search" />
-              <i className="fas fa-times-circle nav-search__clear" />
             </div>
           </div>
         </div>

@@ -42,6 +42,7 @@ a {
 
 .container {
   margin: 0 auto;
+  width: auto;
   @include m-desktop {
     width: 1170px;
   }
