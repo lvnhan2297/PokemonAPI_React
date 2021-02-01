@@ -10,9 +10,6 @@
   left: 0;
   z-index: 1;
   padding: 10px;
-  @include m-mobile {
-    height: $height-nav * 1.6;
-  }
 }
 
 .nav__inner {
@@ -23,11 +20,6 @@
   height: 100%;
   @include m-laptop {
     justify-content: center;
-  }
-  @include m-mobile {
-    padding: 0 $ruler/1.4;
-    flex-direction: column;
-    justify-content: space-evenly;
   }
 }
 
@@ -40,7 +32,6 @@
     justify-content: center;
   }
 }
-
 .nav__logo__text {
   display: flex;
   align-items: center;

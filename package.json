@@ -1,5 +1,5 @@
 {
-  "homepage": "https://lvnhan2297.github.io/app_3",
+  "homepage": "https://lvnhan2297.github.io/app_3/",
   "name": "app_3",
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",

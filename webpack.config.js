@@ -5,10 +5,9 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'js/[name].js',
-    chunkFilename: '[name].chunk.js',
-    publicPath: '/'
+    chunkFilename: '[name].chunk.js'
   },
   devServer: {
     inline:true,
@@ -50,6 +49,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
