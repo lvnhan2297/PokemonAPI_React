@@ -48,14 +48,17 @@ function detailPoke({pokemons,fetchApiDetailPoke,detailPokemons}) {
                     {detailPokemons[pokemons.name].pokemons.egg_groups &&  
                     <span  className="value-cate-info">
                       {detailPokemons[pokemons.name].pokemons.egg_groups.map((item,index)=>
-                      <Link key={index} to={item.url}>{index !== 0 && ', '}{ item.name}</Link>)}
+                      <Link key={index} to={`/egg-group/${item.url.split('/')[item.url.split('/').length-2]}`}>{index !== 0 && ', '}{ item.name}</Link>)}
                     </span>
                     }
                   </div>
                   <div className="cate-info">habitat: 
                     {detailPokemons[pokemons.name].pokemons.habitat ? 
                     <span className="value-cate-info"> 
-                      <Link to={detailPokemons[pokemons.name].pokemons.habitat.url}
+                      <Link to={`/pokemon-habitat/${detailPokemons[pokemons.name].pokemons.habitat.url.split('/')[
+                          detailPokemons[pokemons.name].pokemons.habitat.url.split('/').length-2
+                        ]}`
+                      }
                       >{detailPokemons[pokemons.name].pokemons.habitat.name.replace('-',' ')}</Link>
                       {detailPokemons[pokemons.name].pokemons.habitat.name==='cave'&&'🕳️'||
                       detailPokemons[pokemons.name].pokemons.habitat.name==='forest'&&'🌲'||

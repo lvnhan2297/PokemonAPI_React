@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
-import {API_COLOR_POKE} from '../constants/urlApi'
 import {fetchApiMenuPoke} from '../actions/actionMenu'
 import { Link } from 'react-router-dom';
 
-const nameMenu= 'color';
-
-const listColor = ({fetchApiMenuPoke,collectionPokeMenu}) => {
+const listMenuItem = ({nameMenu,apiListMenu,fetchApiMenuPoke,collectionPokeMenu}) => {
 
   useEffect(() => {
-    fetchApiMenuPoke(API_COLOR_POKE,nameMenu)
+    fetchApiMenuPoke(apiListMenu,nameMenu)
   }, [])
 
   const changeBgStyle = (e,color) => {
@@ -34,4 +31,4 @@ const mapStateToProps = state => {
     collectionPokeMenu: state.collectionPokeMenu,
   }
 }
-export default connect(mapStateToProps,{fetchApiMenuPoke})(listColor)
+export default connect(mapStateToProps,{fetchApiMenuPoke})(listMenuItem)

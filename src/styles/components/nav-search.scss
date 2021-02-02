@@ -5,6 +5,7 @@
   width: 392px;
   display: flex;
   align-items: center;
+  border-radius: 5px;
 
   @include m-mobile {
     width: 100%;
@@ -26,7 +27,8 @@
   margin: 5px;
   cursor: pointer;
   border: none;
-  outline: none
+  outline: none;
+  border-radius: 5px;
 }
 
 .nav-search__clear {

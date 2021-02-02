@@ -16,6 +16,13 @@
 
 
 .poke-card__inner {
+  &:hover .poke-card__artwork{
+    -webkit-transition:all 1s ease;
+      -moz-transition:all 1s ease;
+        -ms-transition:all 1s ease;
+          -o-transition:all 1s ease;
+            transition:all 1s ease;
+  }
   @include m-mobile {
     display: flex;
     align-items: center;
@@ -31,6 +38,8 @@
   background-size: contain;
   margin-bottom: 10px;
   background-color: $darker;
+  border-radius: 10px;
+  border: 1px solid chocolate;
 
   @include m-mobile {
     background-size: cover;
