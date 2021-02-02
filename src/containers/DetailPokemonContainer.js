@@ -7,7 +7,7 @@ import DetailPoke from '../components/detailPoke'
 
 const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
 
-  const linkUrl = window.location.pathname
+  const linkUrl = window.location.href
   const namePokemon = linkUrl.split('/')[linkUrl.split('/').length-1]
   const idPokemon = linkUrl.split('/')[linkUrl.split('/').length-2]
 

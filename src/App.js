@@ -1,6 +1,6 @@
 import React, {useCallback, Suspense} from 'react';
 import NavContainer from './containers/NavContainer';
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import {Switch, Route, HashRouter} from 'react-router-dom';
 import Loading from './components/loading';
 import {routes} from './routes';
 
@@ -24,7 +24,7 @@ const App = () => {
     return <Switch>{result}</Switch>;
   },[]);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavContainer/>
       <>
         <div className="container">
@@ -35,7 +35,7 @@ const App = () => {
           </div>
         </div>
       </>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

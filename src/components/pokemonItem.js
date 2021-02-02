@@ -26,7 +26,7 @@ const pokemonItem= ({name,url}) => {
               })`}} />
             <div className="poke-card__details">
               <Link className="poke-card__title" to={{pathname: '/pokemon/'+getIdByUrl(url)+'/'+ name}} title={name}>{name}</Link>
-              <a className="poke-card__username" href="#" title="Warner Music Brasil">Warner Music Brasil</a></div>
+              <a className="poke-card__username" href="#" title="Pokemon API">Pokemon API</a></div>
           </div>
         </div>
         <div className="poke-card__mobile-event" role="button" />
