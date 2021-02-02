@@ -35,9 +35,6 @@
   border-color: #72d0fb;
   background: linear-gradient(to bottom right,#024,#402);
   padding: 0 20px;
-  @include m-phablet {
-    width: 100%;
-  }
   .card-image-container {
     position: absolute;
     margin-left: auto;
@@ -141,9 +138,6 @@
   background: linear-gradient(to right, #92df00, #4ea13f);
 }
 .group-info-poke{
-  @include m-phablet{
-    padding: 0 60px;
-  }
   @include m-mobile{
     padding: 0;
   }
@@ -172,6 +166,7 @@
 .container-detail-poke{
   display:  flex;
   justify-content: center;
+  flex-wrap: wrap;
   @include m-tablet {
     padding: 0 50px;
   }

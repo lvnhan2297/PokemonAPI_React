@@ -29,7 +29,6 @@ const pokemonItem= ({name,url}) => {
               <a className="poke-card__username" href="#" title="Pokemon API">Pokemon API</a></div>
           </div>
         </div>
-        <div className="poke-card__mobile-event" role="button" />
       </div>
     </>
   )

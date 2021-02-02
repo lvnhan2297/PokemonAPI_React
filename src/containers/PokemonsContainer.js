@@ -26,7 +26,7 @@ const PokemonsContainer = ({fetchApiPoke, collectionPokes}) => {
     const handleScroll = () => {
       if (
         collectionPokes[getDataBy] &&  Math.ceil(window.innerHeight + window.scrollY) ==
-        document.body.offsetHeight + (elHeight==57?100:150)
+        document.body.offsetHeight + (elHeight<=80?100:150)
       ) {
         setTimeout(
           () => fetchApiPoke(collectionPokes[getDataBy].nextUrl,getDataBy)

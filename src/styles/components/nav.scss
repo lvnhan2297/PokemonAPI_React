@@ -11,7 +11,7 @@
   left: 0;
   z-index: 1;
 }
-@include m-laptop {
+@include m-tablet {
   .nav {
     padding: 10px;
   }
@@ -64,6 +64,9 @@
   position: relative;
   &__item{
     padding: 1.2rem 0;
+    @include m-mobile{
+      padding: .5rem 0;
+    }
     &__title{
       text-transform: capitalize;
       color: #ffff;

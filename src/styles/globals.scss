@@ -81,3 +81,23 @@ a {
   min-width: 0;
   min-height: 0;
 }
+
+.btn-back {
+  display: none;
+  @include m-tablet{
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  }
+  @include m-tablet{
+    top: 135px;
+  }
+  @include m-mobile{
+    top: 165px;
+    left: 10px;
+  }
+}

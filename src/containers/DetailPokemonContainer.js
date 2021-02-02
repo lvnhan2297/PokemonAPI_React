@@ -4,6 +4,8 @@ import {fetchApiDetailPoke} from '../actions/actionPokemon'
 import {API_FETCH_POKEMONS} from '../constants/urlApi'
 import Loading from '../components/loading'
 import DetailPoke from '../components/detailPoke'
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { useHistory } from "react-router-dom";
 
 const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
 
@@ -17,10 +19,13 @@ const DetailPokemonContainer = ({fetchApiDetailPoke, detailPokemons}) => {
     fetchApiDetailPoke(api,namePokemon)
   }, [fetchApiDetailPoke,namePokemon])
 
+  let history = useHistory();
+
   return (
     <>{
       detailPokemons[namePokemon] &&
       <div className="container-detail-poke">
+        <IoArrowBackCircleOutline className="btn-back" onClick={() => history.goBack()}/>
         <div className="columns">
           <div className="pokemon column">
             <div className="card has-text-weight-bold has-text-white card--blastoise">
