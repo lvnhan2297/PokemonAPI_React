@@ -1,7 +1,7 @@
 # PokemonAPI_React
 <h3>Project build by Webpack + Babelrc + React + Redux</h3></br>
 <h3>API use : https://pokeapi.co/</h3></br>
-<a href="https://lvnhan2297.github.io/PokemonAPI_React/#/" style="font-weight: bold;font-size:20px">Demo</a></br>
+<h3><a href="https://lvnhan2297.github.io/PokemonAPI_React/#/">Demo</a></br></h3>
 * Note: 
 In the project there will be some 404 errors with images, to get the image I have to call api each pokemon causing slow speed so I replaced it with the direct path.</br>
 If you find the project interesting, give me a star </br>
